@@ -88,7 +88,7 @@ async function init() {
 // ── Data loading ──────────────────────────────────────────────────────────────
 
 async function loadIndex() {
-  const res = await fetch("data/index.json");
+  const res = await fetch("data/index.json", { cache: "no-cache" });
   const data = await res.json();
   currentDate = data.current || null;
 }
@@ -98,7 +98,7 @@ function historyFilename(offset) {
 }
 
 async function fetchHistoryFile(offset) {
-  const res = await fetch(`data/${historyFilename(offset)}`);
+  const res = await fetch(`data/${historyFilename(offset)}`, { cache: "no-cache" });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.json();
 }
@@ -190,7 +190,7 @@ async function loadDiscussed() {
 
   let loaded = false;
   try {
-    const res = await fetch("data/discussed.json");
+    const res = await fetch("data/discussed.json", { cache: "no-cache" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     discussedPapers = (data.papers || []).map((p) => ({
@@ -790,7 +790,7 @@ function showEmptyState(msg) {
 
 // ── Event listeners ───────────────────────────────────────────────────────────
 
-document.addEventListener("DOMContentLoaded", () => {
+function startApp() {
   // ── Announcement banner ──
   const annToggle = document.getElementById("announcement-toggle");
   const annBody   = document.getElementById("announcement-body");
@@ -861,4 +861,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   init();
-});
+}
+
+// The cache-busted script can arrive before or after DOMContentLoaded.
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", startApp, { once: true });
+} else {
+  startApp();
+}

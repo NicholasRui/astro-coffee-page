@@ -13,7 +13,7 @@ function element() {
   };
 }
 const context = vm.createContext({
-  document: { body: { dataset: {} }, createElement: element, addEventListener() {} },
+  document: { readyState: "loading", body: { dataset: {} }, createElement: element, addEventListener() {} },
   localStorage: { getItem() { return null; } },
   location: { pathname: '/' },
 });
@@ -66,4 +66,61 @@ test('papers without local authors have no inclusion suffix', () => {
 test('disabled discussed controls create neither buttons nor badges', () => {
   assert.equal(context.buildDiscussedControl({ id: 'test' }), null);
   assert.equal(context.buildDiscussedControl({ id: 'test', discussed_at: '2026-11-06' }), null);
+});
+
+test('listing requests revalidate browser cache', async () => {
+  const requests = [];
+  context.fetch = async (url, options) => {
+    requests.push([url, options.cache]);
+    return { ok: true, json: async () => ({ current: '2026-11-06', papers: [] }) };
+  };
+  await context.loadIndex();
+  await context.fetchHistoryFile(0);
+  await context.fetchHistoryFile(5);
+  assert.deepEqual(requests, [
+    ['data/index.json', 'no-cache'],
+    ['data/today.json', 'no-cache'],
+    ['data/today-5.json', 'no-cache'],
+  ]);
+});
+
+test('both HTML pages load cache-busted assets', () => {
+  for (const filename of ['index.html', 'discussed.html']) {
+    const nodes = [];
+    const sandbox = vm.createContext({
+      window: {}, Date: { now: () => 123456 },
+      document: {
+        createElement: () => ({}),
+        head: { appendChild: node => nodes.push(node) },
+        body: { appendChild: node => nodes.push(node) },
+      },
+    });
+    const html = fs.readFileSync(filename, 'utf8');
+    for (const match of html.matchAll(/<script>([\s\S]*?)<\/script>/g)) {
+      vm.runInContext(match[1], sandbox);
+    }
+    assert.equal(nodes[0].href, 'style.css?v=123456');
+    assert.equal(nodes[1].src, 'app.js?v=123456');
+  }
+});
+
+test('startup works before and after DOMContentLoaded', () => {
+  const source = fs.readFileSync('app.js', 'utf8');
+  const startup = source.slice(source.lastIndexOf('if (document.readyState'));
+  for (const state of ['loading', 'interactive', 'complete']) {
+    let calls = 0;
+    let onReady;
+    vm.runInNewContext(startup, {
+      startApp: () => calls++,
+      document: {
+        readyState: state,
+        addEventListener: (event, callback) => { onReady = callback; },
+      },
+    });
+    if (state === 'loading') {
+      assert.equal(calls, 0);
+      onReady();
+    }
+    assert.equal(calls, 1);
+  }
 });

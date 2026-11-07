@@ -4,7 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CIERA astro coffee - discussed</title>
-  <link rel="stylesheet" href="style.css" />
+  <script>
+    // GitHub Pages controls HTTP cache headers; use fresh asset URLs on each visit.
+    window.assetVersion = Date.now().toString();
+    const stylesheet = document.createElement("link");
+    stylesheet.rel = "stylesheet";
+    stylesheet.href = `style.css?v=${window.assetVersion}`;
+    document.head.appendChild(stylesheet);
+  </script>
+  <noscript><link rel="stylesheet" href="style.css" /></noscript>
 </head>
 <body data-page="discussed">
 
@@ -67,6 +75,10 @@
   </p>
 </footer>
 
-<script src="app.js"></script>
+<script>
+  const application = document.createElement("script");
+  application.src = `app.js?v=${window.assetVersion}`;
+  document.body.appendChild(application);
+</script>
 </body>
 </html>

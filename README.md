@@ -153,3 +153,14 @@ python -m http.server 8000
 ## Acknowledgment
 
 Thank you to arXiv for use of its open access interoperability.
+
+## Browser caching
+
+Both pages load JavaScript and CSS with a fresh query string on every visit, so
+Firefox and other browsers do not reuse an older asset URL. JSON fetches use
+`cache: "no-cache"` to revalidate cached data with the server. Files loaded within
+a page session still use the existing in-memory listing cache.
+
+GitHub Pages controls the HTML response and CDN caching headers. Already-cached
+HTML may need one hard refresh after this change deploys; this change cannot
+retroactively update a document already held by a browser or an open tab.
