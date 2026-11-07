@@ -403,8 +403,10 @@
       "submitted": "2026-11-02",
       "arxiv_url": "https://arxiv.org/abs/2611.03328",
       "pdf_url": "https://arxiv.org/pdf/2611.03328",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "weak",
+      "local_authors": {
+        "J. Wang": "weak"
+      }
     },
     {
       "id": "2611.03291",
@@ -1558,10 +1560,8 @@
       "submitted": "2026-11-01",
       "arxiv_url": "https://arxiv.org/abs/2611.02224",
       "pdf_url": "https://arxiv.org/pdf/2611.02224",
-      "local_match": "strong",
-      "local_authors": {
-        "D. J. McComas": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2611.02221",
@@ -1686,10 +1686,8 @@
       "submitted": "2026-11-01",
       "arxiv_url": "https://arxiv.org/abs/2611.02144",
       "pdf_url": "https://arxiv.org/pdf/2611.02144",
-      "local_match": "weak",
-      "local_authors": {
-        "L. Armillotta": "weak"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2611.02126",
@@ -1707,11 +1705,8 @@
       "submitted": "2026-11-01",
       "arxiv_url": "https://arxiv.org/abs/2611.02126",
       "pdf_url": "https://arxiv.org/pdf/2611.02126",
-      "local_match": "strong",
-      "local_authors": {
-        "Matthew Goodbred": "strong",
-        "Anatoly Spitkovsky": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2611.02099",
@@ -2866,11 +2861,8 @@
       "submitted": "2026-10-30",
       "arxiv_url": "https://arxiv.org/abs/2611.00415",
       "pdf_url": "https://arxiv.org/pdf/2611.00415",
-      "local_match": "weak",
-      "local_authors": {
-        "J. Myles": "weak",
-        "M. Yamamoto": "weak"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2611.00378",
@@ -3391,11 +3383,8 @@
       "submitted": "2026-10-30",
       "arxiv_url": "https://arxiv.org/abs/2611.00224",
       "pdf_url": "https://arxiv.org/pdf/2611.00224",
-      "local_match": "weak",
-      "local_authors": {
-        "A. Pisani": "weak",
-        "R. Teyssier": "weak"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2611.00221",
@@ -3735,10 +3724,8 @@
       "submitted": "2026-10-30",
       "arxiv_url": "https://arxiv.org/abs/2611.00195",
       "pdf_url": "https://arxiv.org/pdf/2611.00195",
-      "local_match": "strong",
-      "local_authors": {
-        "Hollis B. Akins": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2611.00190",

@@ -28,10 +28,8 @@
       "submitted": "2026-06-01",
       "arxiv_url": "https://arxiv.org/abs/2606.02566",
       "pdf_url": "https://arxiv.org/pdf/2606.02566",
-      "local_match": "strong",
-      "local_authors": {
-        "Mariangela Lisanti": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2606.02539",
@@ -251,10 +249,8 @@
       "submitted": "2026-06-01",
       "arxiv_url": "https://arxiv.org/abs/2606.02353",
       "pdf_url": "https://arxiv.org/pdf/2606.02353",
-      "local_match": "strong",
-      "local_authors": {
-        "Chang-Goo Kim": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2606.02330",
@@ -2722,10 +2718,8 @@
       "submitted": "2026-05-29",
       "arxiv_url": "https://arxiv.org/abs/2605.31548",
       "pdf_url": "https://arxiv.org/pdf/2605.31548",
-      "local_match": "strong",
-      "local_authors": {
-        "Francisco Villaescusa-Navarro": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.31543",
@@ -3087,8 +3081,10 @@
       "submitted": "2026-05-29",
       "arxiv_url": "https://arxiv.org/abs/2605.31290",
       "pdf_url": "https://arxiv.org/pdf/2605.31290",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "strong",
+      "local_authors": {
+        "Emily M. Leiner": "strong"
+      }
     },
     {
       "id": "2605.31242",
@@ -3744,7 +3740,8 @@
       "pdf_url": "https://arxiv.org/pdf/2605.30626",
       "local_match": "weak",
       "local_authors": {
-        "H. Liu": "weak"
+        "H. Liu": "weak",
+        "J. Wang": "weak"
       }
     },
     {
@@ -4270,11 +4267,8 @@
       "submitted": "2026-05-28",
       "arxiv_url": "https://arxiv.org/abs/2605.30440",
       "pdf_url": "https://arxiv.org/pdf/2605.30440",
-      "local_match": "weak",
-      "local_authors": {
-        "A. Pisani": "weak",
-        "R. Teyssier": "weak"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.30436",
@@ -4425,10 +4419,8 @@
       "submitted": "2026-05-28",
       "arxiv_url": "https://arxiv.org/abs/2605.30424",
       "pdf_url": "https://arxiv.org/pdf/2605.30424",
-      "local_match": "strong",
-      "local_authors": {
-        "C. K. Jespersen": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.30420",
@@ -4818,8 +4810,10 @@
       "submitted": "2026-05-28",
       "arxiv_url": "https://arxiv.org/abs/2605.30177",
       "pdf_url": "https://arxiv.org/pdf/2605.30177",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "strong",
+      "local_authors": {
+        "William O. Balmer": "strong"
+      }
     },
     {
       "id": "2605.30175",
@@ -5507,10 +5501,8 @@
       "submitted": "2026-05-28",
       "arxiv_url": "https://arxiv.org/abs/2605.29909",
       "pdf_url": "https://arxiv.org/pdf/2605.29909",
-      "local_match": "weak",
-      "local_authors": {
-        "J. Li": "weak"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.29904",
@@ -6302,11 +6294,8 @@
       "submitted": "2026-05-28",
       "arxiv_url": "https://arxiv.org/abs/2605.29244",
       "pdf_url": "https://arxiv.org/pdf/2605.29244",
-      "local_match": "strong",
-      "local_authors": {
-        "Rachel Wang": "strong",
-        "Hantao Ji": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.29206",
@@ -9014,10 +9003,8 @@
       "submitted": "2026-05-26",
       "arxiv_url": "https://arxiv.org/abs/2605.27291",
       "pdf_url": "https://arxiv.org/pdf/2605.27291",
-      "local_match": "strong",
-      "local_authors": {
-        "J. I. Espinoza-Retamal": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.27289",
@@ -11169,13 +11156,18 @@
       "submitted": "2026-05-26",
       "arxiv_url": "https://arxiv.org/abs/2605.27223",
       "pdf_url": "https://arxiv.org/pdf/2605.27223",
-      "local_match": "strong",
+      "local_match": "weak",
       "local_authors": {
-        "A. Bhattacharjee": "weak",
-        "S. Biscoveanu": "weak",
-        "T. A. Clarke": "strong",
-        "A. Gupta": "weak",
-        "L. Wang": "weak"
+        "A. Ceja": "weak",
+        "J. Ding": "weak",
+        "S. Galaudage": "weak",
+        "I. Gupta": "weak",
+        "V. Kalogera": "weak",
+        "Y. Li": "weak",
+        "A. Ray": "weak",
+        "D. Singh": "weak",
+        "H. Wang": "weak",
+        "M. Zevin": "weak"
       }
     },
     {
@@ -11360,13 +11352,8 @@
       "submitted": "2026-05-26",
       "arxiv_url": "https://arxiv.org/abs/2605.27221",
       "pdf_url": "https://arxiv.org/pdf/2605.27221",
-      "local_match": "weak",
-      "local_authors": {
-        "A. Amon": "weak",
-        "J. Myles": "weak",
-        "M. Yamamoto": "weak",
-        "Y. Zhang": "weak"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.27217",
@@ -11701,10 +11688,8 @@
       "submitted": "2026-05-26",
       "arxiv_url": "https://arxiv.org/abs/2605.27056",
       "pdf_url": "https://arxiv.org/pdf/2605.27056",
-      "local_match": "strong",
-      "local_authors": {
-        "Lyman A. Page": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.27048",
@@ -12988,13 +12973,8 @@
       "submitted": "2026-05-25",
       "arxiv_url": "https://arxiv.org/abs/2605.26238",
       "pdf_url": "https://arxiv.org/pdf/2605.26238",
-      "local_match": "strong",
-      "local_authors": {
-        "Chang-Goo Kim": "strong",
-        "Lucia Armillotta": "strong",
-        "Eve C. Ostriker": "strong",
-        "Ronan N. Hix": "strong"
-      },
+      "local_match": null,
+      "local_authors": {},
       "discussed_at": "2026-05-28"
     },
     {
@@ -13431,8 +13411,10 @@
       "submitted": "2026-05-25",
       "arxiv_url": "https://arxiv.org/abs/2605.25994",
       "pdf_url": "https://arxiv.org/pdf/2605.25994",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "strong",
+      "local_authors": {
+        "Shanika Galaudage": "strong"
+      }
     },
     {
       "id": "2605.25980",
@@ -13453,11 +13435,8 @@
       "submitted": "2026-05-25",
       "arxiv_url": "https://arxiv.org/abs/2605.25980",
       "pdf_url": "https://arxiv.org/pdf/2605.25980",
-      "local_match": "strong",
-      "local_authors": {
-        "April Qiu Cheng": "strong",
-        "Sylvia Biscoveanu": "strong"
-      },
+      "local_match": null,
+      "local_authors": {},
       "discussed_at": "2026-05-28"
     },
     {
@@ -13681,10 +13660,8 @@
       "submitted": "2026-05-25",
       "arxiv_url": "https://arxiv.org/abs/2605.25823",
       "pdf_url": "https://arxiv.org/pdf/2605.25823",
-      "local_match": "weak",
-      "local_authors": {
-        "B. Wang": "weak"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.25772",
@@ -14587,8 +14564,10 @@
       "submitted": "2026-05-23",
       "arxiv_url": "https://arxiv.org/abs/2605.24748",
       "pdf_url": "https://arxiv.org/pdf/2605.24748",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "strong",
+      "local_authors": {
+        "Jason T. L. Wang": "strong"
+      }
     },
     {
       "id": "2605.24746",
@@ -14919,10 +14898,8 @@
       "submitted": "2026-05-23",
       "arxiv_url": "https://arxiv.org/abs/2605.24342",
       "pdf_url": "https://arxiv.org/pdf/2605.24342",
-      "local_match": "strong",
-      "local_authors": {
-        "Andrew K. Saydjari": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.24341",
@@ -15406,8 +15383,10 @@
       "submitted": "2026-05-22",
       "arxiv_url": "https://arxiv.org/abs/2605.24104",
       "pdf_url": "https://arxiv.org/pdf/2605.24104",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "strong",
+      "local_authors": {
+        "Guochao Sun": "strong"
+      }
     },
     {
       "id": "2605.24099",
@@ -15428,8 +15407,10 @@
       "submitted": "2026-05-22",
       "arxiv_url": "https://arxiv.org/abs/2605.24099",
       "pdf_url": "https://arxiv.org/pdf/2605.24099",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "strong",
+      "local_authors": {
+        "Pieter van Dokkum": "strong"
+      }
     },
     {
       "id": "2605.24097",
@@ -15474,10 +15455,8 @@
       "submitted": "2026-05-22",
       "arxiv_url": "https://arxiv.org/abs/2605.24097",
       "pdf_url": "https://arxiv.org/pdf/2605.24097",
-      "local_match": "strong",
-      "local_authors": {
-        "Romain Teyssier": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.24095",
@@ -15607,10 +15586,8 @@
       "submitted": "2026-05-22",
       "arxiv_url": "https://arxiv.org/abs/2605.24088",
       "pdf_url": "https://arxiv.org/pdf/2605.24088",
-      "local_match": "strong",
-      "local_authors": {
-        "Bingjie Wang": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.24087",
@@ -15649,10 +15626,8 @@
       "submitted": "2026-05-22",
       "arxiv_url": "https://arxiv.org/abs/2605.24083",
       "pdf_url": "https://arxiv.org/pdf/2605.24083",
-      "local_match": "strong",
-      "local_authors": {
-        "Rostom Mbarek": "strong"
-      },
+      "local_match": null,
+      "local_authors": {},
       "discussed_at": "2026-05-28"
     },
     {
@@ -16430,10 +16405,8 @@
       "submitted": "2026-05-22",
       "arxiv_url": "https://arxiv.org/abs/2605.23637",
       "pdf_url": "https://arxiv.org/pdf/2605.23637",
-      "local_match": "strong",
-      "local_authors": {
-        "Attila B\u00f3di": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.23599",
@@ -17410,10 +17383,8 @@
       "submitted": "2026-05-21",
       "arxiv_url": "https://arxiv.org/abs/2605.23018",
       "pdf_url": "https://arxiv.org/pdf/2605.23018",
-      "local_match": "strong",
-      "local_authors": {
-        "Lauren Biddle": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.23006",
@@ -17828,8 +17799,10 @@
       "submitted": "2026-05-21",
       "arxiv_url": "https://arxiv.org/abs/2605.22806",
       "pdf_url": "https://arxiv.org/pdf/2605.22806",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "strong",
+      "local_authors": {
+        "Claude-Andr\u00e9 Faucher-Gigu\u00e8re": "strong"
+      }
     },
     {
       "id": "2605.22802",
@@ -18139,8 +18112,11 @@
       "submitted": "2026-05-21",
       "arxiv_url": "https://arxiv.org/abs/2605.22655",
       "pdf_url": "https://arxiv.org/pdf/2605.22655",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "strong",
+      "local_authors": {
+        "Chih-Chun Hsu": "strong",
+        "Jason J. Wang": "strong"
+      }
     },
     {
       "id": "2605.22630",
@@ -18160,10 +18136,8 @@
       "submitted": "2026-05-21",
       "arxiv_url": "https://arxiv.org/abs/2605.22630",
       "pdf_url": "https://arxiv.org/pdf/2605.22630",
-      "local_match": "strong",
-      "local_authors": {
-        "Alice Pisani": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.22618",
@@ -19368,8 +19342,10 @@
       "submitted": "2026-05-20",
       "arxiv_url": "https://arxiv.org/abs/2605.21735",
       "pdf_url": "https://arxiv.org/pdf/2605.21735",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "strong",
+      "local_authors": {
+        "James W. Johnson": "strong"
+      }
     },
     {
       "id": "2605.21730",
@@ -19496,10 +19472,8 @@
       "submitted": "2026-05-20",
       "arxiv_url": "https://arxiv.org/abs/2605.21672",
       "pdf_url": "https://arxiv.org/pdf/2605.21672",
-      "local_match": "strong",
-      "local_authors": {
-        "James R. Beattie": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.21599",
@@ -19588,10 +19562,8 @@
       "submitted": "2026-05-20",
       "arxiv_url": "https://arxiv.org/abs/2605.21598",
       "pdf_url": "https://arxiv.org/pdf/2605.21598",
-      "local_match": "weak",
-      "local_authors": {
-        "M. Cantiello": "weak"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.21592",
@@ -19718,13 +19690,8 @@
       "submitted": "2026-05-20",
       "arxiv_url": "https://arxiv.org/abs/2605.21579",
       "pdf_url": "https://arxiv.org/pdf/2605.21579",
-      "local_match": "strong",
-      "local_authors": {
-        "Shaunak Modak": "strong",
-        "Chris Hamilton": "strong",
-        "Eve C. Ostriker": "strong",
-        "Scott Tremaine": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.21584",
@@ -19822,13 +19789,8 @@
       "submitted": "2026-05-20",
       "arxiv_url": "https://arxiv.org/abs/2605.21574",
       "pdf_url": "https://arxiv.org/pdf/2605.21574",
-      "local_match": "strong",
-      "local_authors": {
-        "Jenny E. Greene": "strong",
-        "Hanpu Liu": "strong",
-        "Jiaxuan Li": "strong",
-        "Yilun Ma": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.21575",
@@ -19874,10 +19836,8 @@
       "submitted": "2026-05-20",
       "arxiv_url": "https://arxiv.org/abs/2605.21576",
       "pdf_url": "https://arxiv.org/pdf/2605.21576",
-      "local_match": "weak",
-      "local_authors": {
-        "Y. Zhang": "weak"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.21483",
@@ -20277,11 +20237,8 @@
       "submitted": "2026-05-20",
       "arxiv_url": "https://arxiv.org/abs/2605.21436",
       "pdf_url": "https://arxiv.org/pdf/2605.21436",
-      "local_match": "weak",
-      "local_authors": {
-        "A. Pisani": "weak",
-        "R. Teyssier": "weak"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.21419",
@@ -21717,8 +21674,10 @@
       "submitted": "2026-05-19",
       "arxiv_url": "https://arxiv.org/abs/2605.20487",
       "pdf_url": "https://arxiv.org/pdf/2605.20487",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "strong",
+      "local_authors": {
+        "James W. Johnson": "strong"
+      }
     },
     {
       "id": "2605.21531",
@@ -22007,10 +21966,8 @@
       "submitted": "2026-05-19",
       "arxiv_url": "https://arxiv.org/abs/2605.20327",
       "pdf_url": "https://arxiv.org/pdf/2605.20327",
-      "local_match": "strong",
-      "local_authors": {
-        "Zachary L. Andalman": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.20323",
@@ -22235,10 +22192,8 @@
       "submitted": "2026-05-19",
       "arxiv_url": "https://arxiv.org/abs/2605.20153",
       "pdf_url": "https://arxiv.org/pdf/2605.20153",
-      "local_match": "weak",
-      "local_authors": {
-        "Y. Chen": "weak"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.20146",
@@ -22389,10 +22344,8 @@
       "submitted": "2026-05-19",
       "arxiv_url": "https://arxiv.org/abs/2605.20060",
       "pdf_url": "https://arxiv.org/pdf/2605.20060",
-      "local_match": "weak",
-      "local_authors": {
-        "B. Wang": "weak"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.20027",
@@ -23647,8 +23600,10 @@
       "submitted": "2026-05-18",
       "arxiv_url": "https://arxiv.org/abs/2605.19153",
       "pdf_url": "https://arxiv.org/pdf/2605.19153",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "strong",
+      "local_authors": {
+        "Anarya Ray": "strong"
+      }
     },
     {
       "id": "2605.19109",
@@ -24211,8 +24166,7 @@
       "pdf_url": "https://arxiv.org/pdf/2605.19040",
       "local_match": "weak",
       "local_authors": {
-        "T. Kim": "weak",
-        "F. Yu": "weak"
+        "A. Wang": "weak"
       }
     },
     {
@@ -24338,10 +24292,8 @@
       "submitted": "2026-05-18",
       "arxiv_url": "https://arxiv.org/abs/2605.18992",
       "pdf_url": "https://arxiv.org/pdf/2605.18992",
-      "local_match": "strong",
-      "local_authors": {
-        "Andrew K. Saydjari": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.18989",
@@ -24674,10 +24626,8 @@
       "submitted": "2026-05-18",
       "arxiv_url": "https://arxiv.org/abs/2605.18959",
       "pdf_url": "https://arxiv.org/pdf/2605.18959",
-      "local_match": "strong",
-      "local_authors": {
-        "Dan S. Taranu": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.18958",
@@ -25033,10 +24983,8 @@
       "submitted": "2026-05-18",
       "arxiv_url": "https://arxiv.org/abs/2605.18742",
       "pdf_url": "https://arxiv.org/pdf/2605.18742",
-      "local_match": "strong",
-      "local_authors": {
-        "Teagan A. Clarke": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2605.18731",
@@ -27623,8 +27571,10 @@
       "submitted": "2026-05-15",
       "arxiv_url": "https://arxiv.org/abs/2605.16546",
       "pdf_url": "https://arxiv.org/pdf/2605.16546",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "strong",
+      "local_authors": {
+        "Wen-fai Fong": "strong"
+      }
     },
     {
       "id": "2605.16526",

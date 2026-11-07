@@ -1138,8 +1138,10 @@
       "submitted": "2026-10-30",
       "arxiv_url": "https://arxiv.org/abs/2610.41452",
       "pdf_url": "https://arxiv.org/pdf/2610.41452",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "weak",
+      "local_authors": {
+        "J. Wang": "weak"
+      }
     },
     {
       "id": "2610.41427",
@@ -1551,8 +1553,10 @@
       "submitted": "2026-10-29",
       "arxiv_url": "https://arxiv.org/abs/2610.41005",
       "pdf_url": "https://arxiv.org/pdf/2610.41005",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "weak",
+      "local_authors": {
+        "J. Wang": "weak"
+      }
     },
     {
       "id": "2610.40964",
@@ -1922,8 +1926,11 @@
       "submitted": "2026-10-29",
       "arxiv_url": "https://arxiv.org/abs/2610.40784",
       "pdf_url": "https://arxiv.org/pdf/2610.40784",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "strong",
+      "local_authors": {
+        "Kung-Yi Su": "strong",
+        "Claude-Andr\u00e9 Faucher-Gigu\u00e8re": "strong"
+      }
     },
     {
       "id": "2610.40782",
@@ -1980,8 +1987,10 @@
       "submitted": "2026-10-29",
       "arxiv_url": "https://arxiv.org/abs/2610.40774",
       "pdf_url": "https://arxiv.org/pdf/2610.40774",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "strong",
+      "local_authors": {
+        "Michael Zevin": "strong"
+      }
     },
     {
       "id": "2610.40770",

@@ -2183,11 +2183,8 @@
       "submitted": "2026-11-02",
       "arxiv_url": "https://arxiv.org/abs/2611.03819",
       "pdf_url": "https://arxiv.org/pdf/2611.03819",
-      "local_match": "strong",
-      "local_authors": {
-        "Yan-Fei Jiang": "strong",
-        "Matteo Cantiello": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2611.03818",

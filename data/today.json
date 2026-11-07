@@ -1903,10 +1903,8 @@
       "submitted": "2026-11-04",
       "arxiv_url": "https://arxiv.org/abs/2611.07121",
       "pdf_url": "https://arxiv.org/pdf/2611.07121",
-      "local_match": "strong",
-      "local_authors": {
-        "David N. Spergel": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2611.07092",
@@ -2043,10 +2041,8 @@
       "submitted": "2026-11-04",
       "arxiv_url": "https://arxiv.org/abs/2611.07070",
       "pdf_url": "https://arxiv.org/pdf/2611.07070",
-      "local_match": "strong",
-      "local_authors": {
-        "Bingjie Wang": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2611.07064",
@@ -2149,10 +2145,8 @@
       "submitted": "2026-11-04",
       "arxiv_url": "https://arxiv.org/abs/2611.07047",
       "pdf_url": "https://arxiv.org/pdf/2611.07047",
-      "local_match": "strong",
-      "local_authors": {
-        "Devontae C. Baxter": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2611.07044",
@@ -2186,8 +2180,10 @@
       "submitted": "2026-11-04",
       "arxiv_url": "https://arxiv.org/abs/2611.07044",
       "pdf_url": "https://arxiv.org/pdf/2611.07044",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "weak",
+      "local_authors": {
+        "J. Wang": "weak"
+      }
     },
     {
       "id": "2611.07039",
@@ -2316,8 +2312,10 @@
       "submitted": "2026-11-04",
       "arxiv_url": "https://arxiv.org/abs/2611.07034",
       "pdf_url": "https://arxiv.org/pdf/2611.07034",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "strong",
+      "local_authors": {
+        "William O. Balmer": "strong"
+      }
     },
     {
       "id": "2611.07033",
@@ -2863,8 +2861,7 @@
       "pdf_url": "https://arxiv.org/pdf/2611.07027",
       "local_match": "strong",
       "local_authors": {
-        "Jenny E Greene": "strong",
-        "Bingjie Wang": "strong"
+        "Guochao Sun": "strong"
       }
     },
     {
@@ -3073,8 +3070,10 @@
       "submitted": "2026-11-04",
       "arxiv_url": "https://arxiv.org/abs/2611.07006",
       "pdf_url": "https://arxiv.org/pdf/2611.07006",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "strong",
+      "local_authors": {
+        "Guochao Sun": "strong"
+      }
     },
     {
       "id": "2611.07008",

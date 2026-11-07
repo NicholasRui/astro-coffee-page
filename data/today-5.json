@@ -117,10 +117,8 @@
       "submitted": "2026-10-29",
       "arxiv_url": "https://arxiv.org/abs/2610.40617",
       "pdf_url": "https://arxiv.org/pdf/2610.40617",
-      "local_match": "strong",
-      "local_authors": {
-        "Francisco Villaescusa-Navarro": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2610.40610",
@@ -246,10 +244,8 @@
       "submitted": "2026-10-29",
       "arxiv_url": "https://arxiv.org/abs/2610.40527",
       "pdf_url": "https://arxiv.org/pdf/2610.40527",
-      "local_match": "strong",
-      "local_authors": {
-        "Lauren I. Biddle": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2610.40493",
@@ -289,10 +285,8 @@
       "submitted": "2026-10-29",
       "arxiv_url": "https://arxiv.org/abs/2610.40493",
       "pdf_url": "https://arxiv.org/pdf/2610.40493",
-      "local_match": "strong",
-      "local_authors": {
-        "John Swinbank": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2610.40456",
@@ -865,10 +859,8 @@
       "submitted": "2026-10-29",
       "arxiv_url": "https://arxiv.org/abs/2610.40167",
       "pdf_url": "https://arxiv.org/pdf/2610.40167",
-      "local_match": "strong",
-      "local_authors": {
-        "David N. Spergel": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2610.40144",
@@ -2986,8 +2978,11 @@
       "submitted": "2026-10-28",
       "arxiv_url": "https://arxiv.org/abs/2610.38733",
       "pdf_url": "https://arxiv.org/pdf/2610.38733",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "weak",
+      "local_authors": {
+        "Y. Li": "weak",
+        "J. Wang": "weak"
+      }
     },
     {
       "id": "2610.38725",
@@ -3085,10 +3080,8 @@
       "submitted": "2026-10-28",
       "arxiv_url": "https://arxiv.org/abs/2610.38693",
       "pdf_url": "https://arxiv.org/pdf/2610.38693",
-      "local_match": "strong",
-      "local_authors": {
-        "Erfan Nourbakhsh": "strong"
-      }
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "id": "2610.38685",
@@ -3121,8 +3114,10 @@
       "submitted": "2026-10-28",
       "arxiv_url": "https://arxiv.org/abs/2610.38685",
       "pdf_url": "https://arxiv.org/pdf/2610.38685",
-      "local_match": null,
-      "local_authors": {}
+      "local_match": "strong",
+      "local_authors": {
+        "Aswin Suresh": "strong"
+      }
     },
     {
       "id": "2610.38684",

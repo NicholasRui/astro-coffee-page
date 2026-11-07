@@ -20,7 +20,9 @@
         "Yoshihiro Ueda"
       ],
       "discussed_at": "2026-07-30",
-      "issue_number": 82
+      "issue_number": 82,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2607.25966",
@@ -449,7 +451,11 @@
         "C. Zilleruelo Ca{\u00f1}as"
       ],
       "discussed_at": "2026-07-30",
-      "issue_number": 81
+      "issue_number": 81,
+      "local_match": "weak",
+      "local_authors": {
+        "A. Wang": "weak"
+      }
     },
     {
       "paper_id": "2606.27903",
@@ -460,7 +466,9 @@
         "Huanyuan Shan"
       ],
       "discussed_at": "2026-06-30",
-      "issue_number": 80
+      "issue_number": 80,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2606.22455",
@@ -501,7 +509,9 @@
         "Kevin B. Stevenson"
       ],
       "discussed_at": "2026-06-24",
-      "issue_number": 79
+      "issue_number": 79,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2606.22919",
@@ -514,7 +524,9 @@
         "Katie Auchettle"
       ],
       "discussed_at": "2026-06-24",
-      "issue_number": 78
+      "issue_number": 78,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2606.21656",
@@ -525,7 +537,9 @@
         "Re'em Sari"
       ],
       "discussed_at": "2026-06-24",
-      "issue_number": 77
+      "issue_number": 77,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2606.17271",
@@ -553,7 +567,9 @@
         "Mengyuan Xiao"
       ],
       "discussed_at": "2026-06-24",
-      "issue_number": 76
+      "issue_number": 76,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2606.12518",
@@ -567,7 +583,9 @@
         "Eliot Quataert"
       ],
       "discussed_at": "2026-06-16",
-      "issue_number": 75
+      "issue_number": 75,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2606.13793",
@@ -578,7 +596,9 @@
         "Romain Teyssier"
       ],
       "discussed_at": "2026-06-16",
-      "issue_number": 74
+      "issue_number": 74,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2606.12653",
@@ -588,7 +608,9 @@
         "Daniel Fabricant"
       ],
       "discussed_at": "2026-06-12",
-      "issue_number": 73
+      "issue_number": 73,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2606.13574",
@@ -602,7 +624,9 @@
         "Quang H. Tran"
       ],
       "discussed_at": "2026-06-12",
-      "issue_number": 72
+      "issue_number": 72,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2606.13567",
@@ -613,7 +637,9 @@
         "Dominic M. Bowman"
       ],
       "discussed_at": "2026-06-12",
-      "issue_number": 71
+      "issue_number": 71,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2606.07787",
@@ -630,7 +656,11 @@
         "St\u00e9phane Mathis"
       ],
       "discussed_at": "2026-06-10",
-      "issue_number": 70
+      "issue_number": 70,
+      "local_match": "strong",
+      "local_authors": {
+        "Nicholas Z. Rui": "strong"
+      }
     },
     {
       "paper_id": "2606.10538",
@@ -647,7 +677,9 @@
         "S. D. Ryder"
       ],
       "discussed_at": "2026-06-10",
-      "issue_number": 69
+      "issue_number": 69,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2606.08023",
@@ -668,7 +700,9 @@
         "Zhongli Zhang"
       ],
       "discussed_at": "2026-06-09",
-      "issue_number": 68
+      "issue_number": 68,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2606.05277",
@@ -704,7 +738,9 @@
         "K. C. Wong"
       ],
       "discussed_at": "2026-06-08",
-      "issue_number": 66
+      "issue_number": 66,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2606.04232",
@@ -742,7 +778,9 @@
         "F. Zahedy"
       ],
       "discussed_at": "2026-06-08",
-      "issue_number": 65
+      "issue_number": 65,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2606.04093",
@@ -755,7 +793,9 @@
         "Greg L. Bryan"
       ],
       "discussed_at": "2026-06-05",
-      "issue_number": 60
+      "issue_number": 60,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2606.04087",
@@ -768,7 +808,9 @@
         "Greg L. Bryan"
       ],
       "discussed_at": "2026-06-05",
-      "issue_number": 59
+      "issue_number": 59,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2606.04379",
@@ -779,7 +821,9 @@
         "Abraham Loeb"
       ],
       "discussed_at": "2026-06-04",
-      "issue_number": 55
+      "issue_number": 55,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2605.30424",
@@ -822,7 +866,9 @@
         "P. -F. Wu"
       ],
       "discussed_at": "2026-06-02",
-      "issue_number": 51
+      "issue_number": 51,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2605.30414",
@@ -867,7 +913,9 @@
         "L. Y. Aaron Yung"
       ],
       "discussed_at": "2026-06-02",
-      "issue_number": 50
+      "issue_number": 50,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2606.00612",
@@ -878,7 +926,9 @@
         "Robert Finch"
       ],
       "discussed_at": "2026-06-02",
-      "issue_number": 49
+      "issue_number": 49,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2605.20317",
@@ -891,7 +941,9 @@
         "Jeremy D. Schnittman"
       ],
       "discussed_at": "2026-05-29",
-      "issue_number": 46
+      "issue_number": 46,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2605.25980",
@@ -904,7 +956,9 @@
         "Jonathan Gair"
       ],
       "discussed_at": "2026-05-28",
-      "issue_number": 42
+      "issue_number": 42,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2605.24083",
@@ -916,7 +970,9 @@
         "Elias R. Most"
       ],
       "discussed_at": "2026-05-28",
-      "issue_number": 41
+      "issue_number": 41,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2605.26238",
@@ -933,7 +989,9 @@
         "Ronan N. Hix"
       ],
       "discussed_at": "2026-05-28",
-      "issue_number": 39
+      "issue_number": 39,
+      "local_match": null,
+      "local_authors": {}
     },
     {
       "paper_id": "2605.13968",
@@ -943,7 +1001,9 @@
         "Rostom Mbarek"
       ],
       "discussed_at": "2026-05-15",
-      "issue_number": 44
+      "issue_number": 44,
+      "local_match": null,
+      "local_authors": {}
     }
   ]
 }
