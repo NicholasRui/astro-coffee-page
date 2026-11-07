@@ -220,8 +220,7 @@ function buildCatFilter() {
     const btn = document.createElement("button");
     btn.className = "cat-toggle active";
     btn.dataset.cat = cat;
-    btn.title = CAT_LABELS[cat] || cat;
-    btn.textContent = cat.split(".")[1];
+    btn.textContent = CAT_LABELS[cat] || cat;
     btn.addEventListener("click", () => toggleCat(cat, btn));
     container.appendChild(btn);
   });
