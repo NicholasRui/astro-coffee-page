@@ -12,18 +12,24 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 import scrape_authors
 
 
+@pytest.fixture(autouse=True)
+def directory_group():
+    with patch.object(scrape_authors, "GROUPS", ("core-faculty",)):
+        yield
+
+
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
 def make_html(names):
-    """Build minimal Princeton-style people-page HTML for the given names."""
+    """Build minimal CIERA-style people-page HTML for the given names."""
     items = ""
     for name in names:
         items += f"""
-        <div class="content-list-item feature-is-3x4 no-featured-video">
-          <span class="field field--name-title field--type-string field--label-hidden">{name}</span>
+        <div class="people-content">
+          <h4><a href="/directory/person/">{name}</a></h4>
         </div>
         """
-    return f"<html><body>{items}</body></html>"
+    return f'<html><body><h3 class="nu-gm-directory-group-title">Core Faculty</h3><div class="nu-gm-directory-group-content">{items}</div></body></html>'
 
 
 # ── scrape_page ───────────────────────────────────────────────────────────────
@@ -90,14 +96,14 @@ def test_scrape_page_retries_then_succeeds():
 
 def test_scrape_page_skips_entries_without_name_span():
     html = """
-    <html><body>
-      <div class="content-list-item feature-is-3x4 no-featured-video">
+    <html><body><h3 class="nu-gm-directory-group-title">Core Faculty</h3><div class="nu-gm-directory-group-content">
+      <div class="people-content">
         <p>No name span here</p>
       </div>
-      <div class="content-list-item feature-is-3x4 no-featured-video">
-        <span class="field field--name-title field--type-string field--label-hidden">Alice Smith</span>
+      <div class="people-content">
+        <h4><a href="/directory/person/">Alice Smith</a></h4>
       </div>
-    </body></html>
+    </div></body></html>
     """
     mock_resp = MagicMock()
     mock_resp.text = html
@@ -186,3 +192,18 @@ def test_main_deduplicates_names(tmp_path):
 
     assert unique == ["Alice Smith", "Bob Jones"]
     assert len(unique) == 2
+
+
+def test_missing_group_refuses_partial_directory():
+    response = MagicMock(text=make_html(["Alice Smith"]))
+    with patch.object(scrape_authors, "GROUPS", ("core-faculty", "postdocs")), \
+         patch.object(scrape_authors._scraper, "get", return_value=response):
+        assert scrape_authors.scrape_page("CIERA", "https://example.com") == []
+
+
+def test_alumni_are_excluded():
+    response = MagicMock(text=make_html(["Alice Smith"]) +
+        '<section id="nu-gm-directory-group-postdoctoral-alumni">'
+        '<div class="people-content"><h4><a>Former Member</a></h4></div></div>')
+    with patch.object(scrape_authors._scraper, "get", return_value=response):
+        assert scrape_authors.scrape_page("CIERA", "https://example.com") == ["Alice Smith"]

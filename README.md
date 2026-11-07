@@ -8,18 +8,18 @@ A daily arXiv astro-ph paper browser hosted on GitHub Pages.
 - Sequential arXiv listing numbers [1]…[N] matching `arxiv.org/list/astro-ph/new`, with cross-listings labelled and numbered continuously
 - Three independent sorting axes, freely combinable:
   - **Sort**: ↑ ascending / ↓ descending arXiv ID (persisted)
-  - **Local first**: None / Strong / Strong+Weak — prioritises Princeton author papers (persisted)
+  - **Local first**: None / Strong / Strong+Weak — prioritises CIERA author papers (persisted)
   - **Listing**: Today / -1 / -2 / -3 / -4 / -5 — switches between the latest six arXiv listings
 - **Search** — always-visible title + author search across the retained listing history
 - Filter by sub-category (GA, CO, EP, HE, IM, SR)
 - Section dividers in the paper list reflect the active grouping (local-strong / local-weak / other, or new submissions / cross-listings)
 - **Discussed papers** — per-paper GitHub issue flow plus a separate discussed page synced nightly into `data/discussed.json`
-- Highlight Princeton authors (strong: bold amber; weak: italic pale yellow)
+- Highlight CIERA authors (strong: bold purple; weak: italic teal)
 - Long-term archive storage — purged `today-5.json` listings are saved into yearly SQLite files under `data/archive/`
 - Author match strength (`local_match`, `local_authors`) precomputed during scraping — no client-side name matching
 - **Font size control** — S / M / L in the filter row; persisted across sessions
 - **Abstract expand mode** — Off / Local / All button group; persisted across sessions
-- **Author truncation** — long author lists collapsed to 5 with expand toggle; strong-match papers always show full list
+- **Author truncation** — papers with 10 or more authors show the first 5 followed by `, ... (incl. local authors)`; both strong and weak matches remain visible, with an expand toggle for the full list
 
 ## Setup
 
@@ -68,13 +68,13 @@ There are two author list files:
 | `config/authors.json` | Auto-populated by scraping the department people page. **Do not edit by hand** — it is overwritten monthly by the GitHub Action. |
 | `config/authors_manual.json` | Hand-curated additions (collaborators, alumni, etc.). Never overwritten automatically. |
 
-Both files are loaded at page load and merged (manual entries take precedence).
+Both files are merged by the scraper when annotating papers (manual entries take precedence). The manual list starts empty for CIERA.
 
 **Automatic updates** — the workflow in `.github/workflows/monthly-authors.yml` re-scrapes
-the Princeton Astronomy people page on the 1st of every month and commits the result to
+the Northwestern CIERA directory on the 1st of every month and commits the result to
 `config/authors.json`. It can also be triggered manually via **Actions → Monthly author
 list update → Run workflow**. The workflow retries the complete scrape up to three times
-when Princeton's Cloudflare protection persistently blocks an individual people page;
+when a transient network failure prevents a complete directory fetch;
 incomplete results are never committed.
 
 **Manual additions** — edit `config/authors_manual.json` directly:
@@ -96,10 +96,12 @@ pip install -r requirements.txt
 python scripts/scrape_authors.py
 ```
 
-To adapt for a different institution, edit the `PAGES` list and CSS selectors in
+The directory source is https://ciera.northwestern.edu/directory/. Current research groups are included; administrative staff and postdoctoral alumni are excluded. Missing or empty groups abort the update to protect the existing roster.
+
+To adapt for a different institution, edit `PAGES`, `GROUPS`, and CSS selectors in
 `scripts/scrape_authors.py`. Use `--dry-run` to preview without writing.
 
-Names are matched by last name (exact) then first name. **Strong** match (bold amber): exact first name, hyphenated initials matching a hyphenated first name (`C.-G.` == `Chang-Goo`), or first + middle initial both match (`M. W.` == `Matthew W.`). **Weak** match (italic grey): first initial only against a non-hyphenated fav name. **No match**: single initial against a hyphenated fav name (`C. Kim` vs `Chang-Goo Kim`), arXiv provides a middle initial the fav lacks (`G. A. Livadiotis` vs `George Livadiotis`), conflicting middle initials (`M. A. Kunz` vs `Matthew W. Kunz`), or conflicting full first names (`Yujie Chen` vs `Yixian Chen`). To get a strong match for someone who publishes under an abbreviated name, add that form to `config/authors_manual.json` (e.g. `"G. Livadiotis"`). Titles (Dr., Sir) and suffixes (Jr., III) are ignored.
+Names are matched by last name (exact) then first name. **Strong** match (bold purple): exact first name, hyphenated initials matching a hyphenated first name (`C.-G.` == `Chang-Goo`), or first + middle initial both match (`M. W.` == `Matthew W.`). **Weak** match (italic teal): first initial only against a non-hyphenated fav name. **No match**: single initial against a hyphenated fav name (`C. Kim` vs `Chang-Goo Kim`), arXiv provides a middle initial the fav lacks (`G. A. Livadiotis` vs `George Livadiotis`), conflicting middle initials (`M. A. Kunz` vs `Matthew W. Kunz`), or conflicting full first names (`Yujie Chen` vs `Yixian Chen`). To get a strong match for someone who publishes under an abbreviated name, add that form to `config/authors_manual.json` (e.g. `"G. Livadiotis"`). Titles (Dr., Sir) and suffixes (Jr., III) are ignored.
 
 ## Local development
 
@@ -124,7 +126,7 @@ python scripts/scrape.py
 # Scrape a specific date manually
 python scripts/scrape.py 2026-03-06
 
-# Update the author list from the Princeton Astro people page
+# Update the author list from the Northwestern CIERA directory
 python scripts/scrape_authors.py
 
 # Serve locally

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Scrape the Princeton Astronomy department people pages and update config/authors.json.
+Scrape the Northwestern CIERA directory and update config/authors.json.
 
 Usage:
     python scripts/scrape_authors.py [--dry-run]
@@ -8,8 +8,7 @@ Usage:
 Requirements:
     pip install requests beautifulsoup4
 
-By default scrapes: Faculty, Postdocs/Researchers, Graduate Students, and Associated Faculty/Affiliates.
-Edit PAGES below to customise which groups are included.
+Scrapes current research groups from the CIERA directory.
 """
 
 import argparse
@@ -18,39 +17,26 @@ import time
 from pathlib import Path
 
 try:
-    import cloudscraper
+    import requests
     from bs4 import BeautifulSoup
 except ImportError:
     raise SystemExit(
-        "Missing dependencies. Install with:\n  pip install cloudscraper beautifulsoup4"
+        "Missing dependencies. Install with:\n  pip install requests beautifulsoup4"
     )
 
-# cloudscraper handles Cloudflare JS challenges automatically
-_scraper = cloudscraper.create_scraper(browser={"browser": "chrome", "platform": "darwin"})
+# Reuse connections while fetching the public directory.
+_scraper = requests.Session()
 
-BASE_URL = "https://web.astro.princeton.edu"
+BASE_URL = "https://ciera.northwestern.edu"
+PAGES = [("CIERA directory", f"{BASE_URL}/directory/")]
 
-# Pages to scrape and their labels. Comment out any groups you want to exclude.
-PAGES = [
-    ("Faculty & Research Scholars",
-     f"{BASE_URL}/people/astronomy-Faculty%20and%20Research%20Scholars"),
-    ("Postdoctoral Researchers",
-     f"{BASE_URL}/people/postdocs-researchers"),
-    ("Graduate Students",
-     f"{BASE_URL}/people/graduate-students"),
-    ("Undergraduate Students",
-     f"{BASE_URL}/people/undergraduate-students"),
-    ("Associated Faculty & Affiliates",
-     f"{BASE_URL}/people/associated-faculty-department-affiliates"),
-]
+# Current research groups; exclude administrative staff and postdoctoral alumni.
+GROUPS = (
+    "core-faculty", "associate-faculty", "affiliate-faculty", "visiting-scholars",
+    "postdocs", "research-staff", "graduate-students", "nu-skai-personnel",
+)
 
-# CSS selectors (Princeton Astro site structure as of 2024)
-PERSON_DIV_CLASS = "content-list-item feature-is-3x4 no-featured-video"
-NAME_SPAN_CLASS = "field field--name-title field--type-string field--label-hidden"
-
-# Retry settings for transient Cloudflare / network failures. From GitHub Actions
-# datacenter IPs, Cloudflare often serves an intermittent 403; retrying with a
-# growing delay gives cloudscraper another chance to clear the challenge.
+# Retry transient HTTP and network failures with a growing delay.
 MAX_RETRIES = 4
 RETRY_BACKOFF_SECONDS = 5
 
@@ -73,13 +59,20 @@ def scrape_page(label, url):
             time.sleep(delay)
 
     soup = BeautifulSoup(r.text, "html.parser")
-    people = soup.find_all("div", class_=PERSON_DIV_CLASS)
-
     names = []
-    for person in people:
-        span = person.find("span", class_=NAME_SPAN_CLASS)
-        if span:
-            name = span.get_text(strip=True)
+    for group in GROUPS:
+        heading = next((h for h in soup.select("h3.nu-gm-directory-group-title")
+                        if h.get_text(" ", strip=True).lower().replace(" ", "-") == group), None)
+        section = heading.find_next("div", class_="nu-gm-directory-group-content") if heading else None
+        if section is None:
+            print(f"FAILED: missing directory group {group}")
+            return []
+        members = section.select(".people-content h4 a")
+        if not members:
+            print(f"FAILED: empty directory group {group}")
+            return []
+        for member in members:
+            name = member.get_text(" ", strip=True)
             if name:
                 names.append(name)
 
@@ -89,7 +82,7 @@ def scrape_page(label, url):
 
 def main():
     """Parse arguments, scrape all configured pages, and write config/authors.json."""
-    parser = argparse.ArgumentParser(description="Scrape Princeton Astro people list")
+    parser = argparse.ArgumentParser(description="Scrape Northwestern CIERA people list")
     parser.add_argument(
         "--dry-run", action="store_true",
         help="Print names without writing to config/authors.json"

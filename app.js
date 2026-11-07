@@ -339,6 +339,10 @@ function sortPapers(papers) {
  * Render the "others" group, splitting new submissions from cross-listings.
  */
 function appendOthersWithCrossListSplit(list, others, partial) {
+  if (others.length) {
+    list.appendChild(makeSectionHeader(
+      `Other authors (${others.length}${partial ? "+" : ""})`));
+  }
   const newSubs   = others.filter(isNewSubmission);
   const crossList = others.filter((p) => !isNewSubmission(p));
   newSubs.forEach((p) => list.appendChild(buildCard(p)));
@@ -485,12 +489,13 @@ function makeSectionHeader(text) {
 }
 
 const MAX_AUTHORS_SHOWN = 5;
+const AUTHOR_TRUNCATION_THRESHOLD = 10;
 
 function buildAuthorsDiv(paper) {
   const div = document.createElement("div");
   div.className = "paper-authors";
-  const authors = paper.authors;
-  const truncate = paper.local_match !== "strong" && authors.length > MAX_AUTHORS_SHOWN;
+  const authors = Array.isArray(paper.authors) ? paper.authors : [];
+  const truncate = authors.length >= AUTHOR_TRUNCATION_THRESHOLD;
 
   if (!truncate) {
     div.innerHTML = authors.map((a) => highlightAuthor(a, paper.local_authors)).join(", ");
@@ -508,7 +513,17 @@ function buildAuthorsDiv(paper) {
 
   const expandBtn = document.createElement("button");
   expandBtn.className = "author-expand-btn";
-  expandBtn.textContent = ` … and ${authors.length - MAX_AUTHORS_SHOWN} more`;
+  expandBtn.textContent = ", ...";
+  expandBtn.setAttribute("aria-label", `Show all ${authors.length} authors`);
+  expandBtn.setAttribute("aria-expanded", "false");
+
+  const localSummary = document.createElement("span");
+  const localAuthors = authors.filter((a) =>
+    ["strong", "weak"].includes(paper.local_authors?.[a]));
+  if (localAuthors.length) {
+    localSummary.innerHTML = " (incl. " + localAuthors
+      .map((a) => highlightAuthor(a, paper.local_authors)).join(", ") + ")";
+  }
 
   const collapseBtn = document.createElement("button");
   collapseBtn.className = "author-expand-btn";
@@ -517,16 +532,20 @@ function buildAuthorsDiv(paper) {
 
   expandBtn.addEventListener("click", () => {
     expandBtn.hidden = true;
+    expandBtn.setAttribute("aria-expanded", "true");
+    localSummary.hidden = true;
     hiddenSpan.hidden = false;
     collapseBtn.hidden = false;
   });
   collapseBtn.addEventListener("click", () => {
     expandBtn.hidden = false;
+    expandBtn.setAttribute("aria-expanded", "false");
+    localSummary.hidden = false;
     hiddenSpan.hidden = true;
     collapseBtn.hidden = true;
   });
 
-  div.append(shownSpan, expandBtn, hiddenSpan, collapseBtn);
+  div.append(shownSpan, expandBtn, localSummary, hiddenSpan, collapseBtn);
   return div;
 }
 
@@ -617,7 +636,7 @@ function buildDiscussedIssueUrl(paper) {
     body,
     labels: DISCUSSED_ISSUE_LABEL,
   });
-  return `https://github.com/changgoo/astro-coffee-page/issues/new?${params.toString()}`;
+  return `https://github.com/NicholasRui/astro-coffee-page/issues/new?${params.toString()}`;
 }
 
 function buildDiscussedControl(paper) {
@@ -671,9 +690,7 @@ function buildDiscussedCard(paper) {
   titleSpan.addEventListener("click", () => window.open(paper.arxiv_url, "_blank", "noopener"));
   titleDiv.appendChild(titleSpan);
 
-  const authorsDiv = document.createElement("div");
-  authorsDiv.className = "paper-authors";
-  authorsDiv.textContent = Array.isArray(paper.authors) ? paper.authors.join(", ") : "";
+  const authorsDiv = buildAuthorsDiv(paper);
 
   card.append(meta, titleDiv, authorsDiv);
   return card;

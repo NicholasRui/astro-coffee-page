@@ -3,29 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>astro coffee</title>
+  <title>CIERA astro coffee</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body data-page="today">
 
 <header>
-  <a href="https://web.astro.princeton.edu/" target="_blank" rel="noopener"
-     class="header-shield" title="Princeton Astrophysical Sciences">
-    <img src="https://www.princeton.edu/favicon.ico"
-         height="32" alt="Princeton shield">
+  <a href="https://ciera.northwestern.edu/" target="_blank" rel="noopener"
+     class="header-shield" title="Northwestern CIERA">
+    <img src="https://www.northwestern.edu/favicon.ico"
+         height="32" alt="Northwestern University">
   </a>
 
-  <h1><a href="index.html">astro coffee ☕</a></h1>
+  <h1><a href="index.html">CIERA astro coffee ☕</a></h1>
 
   <div class="header-controls">
     <span id="current-date-label" class="current-date-label"></span>
     <span id="fetched-at" class="fetched-at"></span>
   </div>
 
-  <a href="https://changgoo.github.io/AstroCoffee/"
-     target="_blank" rel="noopener" class="header-center-link">
-    Host Calendar&nbsp;&#128197;
-  </a>
+  <a href="https://ciera.northwestern.edu/directory/"
+     target="_blank" rel="noopener" class="header-center-link">CIERA Directory</a>
 
   <a href="discussed.html" class="header-center-link">
     Discussed
@@ -36,7 +34,7 @@
        target="_blank" rel="noopener" title="arXiv listing for this date" aria-label="arXiv">
       <img src="https://arxiv.org/favicon.ico" width="22" height="22" alt="arXiv">
     </a>
-    <a href="https://github.com/changgoo/astro-coffee-page"
+    <a href="https://github.com/NicholasRui/astro-coffee-page"
        target="_blank" rel="noopener" title="GitHub repository" aria-label="GitHub">
       <svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor" aria-hidden="true">
         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
@@ -51,38 +49,22 @@
       <svg class="announcement-chevron" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true">
         <path d="M1.5 5.5l6 6 6-6"/>
       </svg>
-      <span>Welcome to Astro-Coffee@Princeton!</span>
+      <span>Welcome to Astro-Coffee@Northwestern CIERA!</span>
     </button>
     <div id="announcement-body" hidden>
-      <p>Every weekday, the Department of Astrophysical Sciences at Princeton University
-        gathers in <strong>Peyton Hall's Grand Central</strong> to discuss the latest
+      <p>A place for the Northwestern CIERA community to explore the latest
         <a href="https://arxiv.org/list/astro-ph/new" target="_blank" rel="noopener">arXiv astro-ph</a>
-        posting at <strong>10:30 AM</strong> over coffee. Visitors to the department are always
-        welcome to join these discussions.</p>
-
+        papers and share informal, friendly discussions over coffee.</p>
+      <p>CIERA is Northwestern University's Center for Interdisciplinary Exploration and Research in Astrophysics.</p>
       <ul>
-        <li>We gather every day at 10:30 AM for 30 minutes in Grand Central and on Zoom.</li>
-        <li>It is an opportunity to share news, introduce new members/visitors, and discuss new papers on arXiv over coffee/tea.</li>
-        <li>We expect the coffee interaction to be informal and friendly.</li>
-        <li>We encourage hosts and attendees to bring to attention any important, interesting, or discussion-worthy papers, from inside or outside the department, including papers from previous days or weeks.</li>
-        <li>All department members, from undergraduates to faculty, should feel free to join with diverse backgrounds and expertise. Especially during the summer, the coffee presentations should aim to be more pedagogical.</li>
-        <li>We welcome local-author papers, but avoid making them the default focus. For example, hosts would not need to actively approach local authors, but local authors would be encouraged to contact hosts if they would like their paper to be discussed.</li>
-        <li>Visitors with a recent paper can also present at coffee — the host should inform them this is not a mini-talk and to keep their words and discussion within ~10 minutes.</li>
+        <li>Everyone is welcome to bring interesting papers, questions, and perspectives.</li>
+        <li>Use “Local first” to prioritize papers by CIERA researchers. Author matches use the current CIERA directory.</li>
+        <li>Keep discussions welcoming, respectful, and accessible to people with different backgrounds and expertise.</li>
       </ul>
-
-      <p><strong>The coffee interactions should be respectful and professional, conforming to the
-        <a href="https://web.astro.princeton.edu/astrophysical-sciences-community-expectations-respectful-and-professional-conduct"
-           target="_blank" rel="noopener">department community expectations</a>.</strong> Coffee <a href="https://docs.google.com/document/d/16_aUOFAPHW-ZPks7_lB_YHKLiHo49UO9nFNQe57VG1s/edit?usp=sharing"> expectation and guidline</a>.</p>
-
-      <p>We hope coffee time is enjoyable and a good start to the day for everyone!</p>
-
+      <p>Learn more about <a href="https://ciera.northwestern.edu/" target="_blank" rel="noopener">CIERA</a>
+        and its <a href="https://ciera.northwestern.edu/directory/" target="_blank" rel="noopener">research community</a>.</p>
       <div class="announcement-footer">
-        <span>Questions or feedback?
-          <a href="mailto:changgoo@princeton.edu">changgoo@princeton.edu</a>
-          &nbsp;&middot;&nbsp;
-          <a href="https://github.com/changgoo/astro-coffee-page/issues/new"
-             target="_blank" rel="noopener">Open a GitHub issue</a>
-        </span>
+        <a href="https://github.com/NicholasRui/astro-coffee-page/issues/new" target="_blank" rel="noopener">Questions or feedback? Open a GitHub issue</a>
       </div>
     </div>
   </div>
