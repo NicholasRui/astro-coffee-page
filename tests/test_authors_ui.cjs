@@ -61,3 +61,9 @@ test('papers without local authors have no inclusion suffix', () => {
   const node = render({ authors });
   assert.equal(node.children[2].innerHTML, '');
 });
+
+
+test('disabled discussed controls create neither buttons nor badges', () => {
+  assert.equal(context.buildDiscussedControl({ id: 'test' }), null);
+  assert.equal(context.buildDiscussedControl({ id: 'test', discussed_at: '2026-11-06' }), null);
+});

@@ -13,7 +13,7 @@ A daily arXiv astro-ph paper browser hosted on GitHub Pages.
 - **Search** — always-visible title + author search across the retained listing history
 - Filter by sub-category (GA, CO, EP, HE, IM, SR)
 - Section dividers in the paper list reflect the active grouping (local-strong / local-weak / other, or new submissions / cross-listings)
-- **Discussed papers** — per-paper GitHub issue flow plus a separate discussed page synced nightly into `data/discussed.json`
+- **Discussed papers (disabled)** — set `DISCUSSED_ENABLED` in `app.js` to re-enable the per-paper GitHub issue flow and discussed page. The data, issue templates, and sync workflow remain in place; controls, badges, and navigation are hidden while disabled.
 - Highlight CIERA authors (strong: bold purple; weak: italic teal)
 - Long-term archive storage — purged `today-5.json` listings are saved into yearly SQLite files under `data/archive/`
 - Author match strength (`local_match`, `local_authors`) precomputed during scraping — no client-side name matching
@@ -102,6 +102,22 @@ To adapt for a different institution, edit `PAGES`, `GROUPS`, and CSS selectors 
 `scripts/scrape_authors.py`. Use `--dry-run` to preview without writing.
 
 Names are matched by last name (exact) then first name. **Strong** match (bold purple): exact first name, hyphenated initials matching a hyphenated first name (`C.-G.` == `Chang-Goo`), or first + middle initial both match (`M. W.` == `Matthew W.`). **Weak** match (italic teal): first initial only against a non-hyphenated fav name. **No match**: single initial against a hyphenated fav name (`C. Kim` vs `Chang-Goo Kim`), arXiv provides a middle initial the fav lacks (`G. A. Livadiotis` vs `George Livadiotis`), conflicting middle initials (`M. A. Kunz` vs `Matthew W. Kunz`), or conflicting full first names (`Yujie Chen` vs `Yixian Chen`). To get a strong match for someone who publishes under an abbreviated name, add that form to `config/authors_manual.json` (e.g. `"G. Livadiotis"`). Titles (Dr., Sir) and suffixes (Jr., III) are ignored.
+
+## Generated files and version control
+
+Keep `config/authors.json` and `data/` tracked. They are published assets that
+GitHub Pages serves directly, and the workflows commit regenerated versions back
+to the repository. They are not disposable build files. The archive databases
+also retain historical papers that a current arXiv scrape cannot fully recover.
+
+When changing institutions, commit the initial regenerated `config/authors.json`
+or manually run **Monthly author list update**. A roster commit triggers
+**Re-annotate papers on author list change**, which refreshes the six rolling
+listings before Pages redeploys. Changing the scraper alone does not refresh the
+published roster or existing paper matches.
+
+Python caches, bytecode, and operating-system temporary files are ignored by
+`.gitignore` and should stay untracked.
 
 ## Local development
 

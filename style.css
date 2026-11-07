@@ -554,3 +554,6 @@ footer a { color: var(--primary); }
   padding: 60px;
   color: var(--text-muted);
 }
+
+/* Keep disabled feature entry points hidden even when layout styles set display. */
+[data-discussed-feature][hidden] { display: none; }

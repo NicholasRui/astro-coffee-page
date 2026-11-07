@@ -22,6 +22,8 @@ let allPapers = [];
 let activeCats = new Set(ASTRO_CATS);
 const PAGE_MODE = document.body.dataset.page ||
   (location.pathname.endsWith("discussed.html") ? "discussed" : "today");
+// Keep discussed-paper infrastructure available while disabling the user-facing feature.
+const DISCUSSED_ENABLED = false;
 const DISCUSSED_ISSUE_LABEL = "discussed-paper";
 // ── Sorting state (three independent axes) ────────────────────────────────────
 let sortOrder  = localStorage.getItem("sort-order")   || "asc";       // "asc" | "desc"
@@ -60,6 +62,9 @@ function syncSortUI() {
 }
 
 async function init() {
+  document.querySelectorAll("[data-discussed-feature]").forEach((node) => {
+    node.hidden = !DISCUSSED_ENABLED;
+  });
   applyFontSize(currentFontSize);
   syncSortUI();
 
@@ -174,6 +179,10 @@ function updateDateLabel(dateStr) {
 }
 
 async function loadDiscussed() {
+  if (!DISCUSSED_ENABLED) {
+    showEmptyState("Discussed-paper features are currently disabled.");
+    return;
+  }
   document.getElementById("loading").style.display = "block";
   document.getElementById("loading").textContent = "Loading discussed papers…";
   document.getElementById("paper-list").innerHTML = "";
@@ -555,7 +564,7 @@ function buildCard(paper) {
 
   if (paper.local_match === "strong") card.classList.add("highlighted-strong");
   else if (paper.local_match === "weak") card.classList.add("highlighted-weak");
-  if (paper.discussed_at) card.classList.add("discussed-paper");
+  if (DISCUSSED_ENABLED && paper.discussed_at) card.classList.add("discussed-paper");
 
   const meta = document.createElement("div");
   meta.className = "paper-meta";
@@ -587,7 +596,8 @@ function buildCard(paper) {
 
   const discussedControl = buildDiscussedControl(paper);
 
-  meta.append(idSpan, pdfLink, primaryBadge, secSpan, discussedControl);
+  meta.append(idSpan, pdfLink, primaryBadge, secSpan);
+  if (discussedControl) meta.append(discussedControl);
 
   const titleDiv = document.createElement("div");
   titleDiv.className = "paper-title";
@@ -640,6 +650,7 @@ function buildDiscussedIssueUrl(paper) {
 }
 
 function buildDiscussedControl(paper) {
+  if (!DISCUSSED_ENABLED) return null;
   if (paper.discussed_at) {
     const badge = document.createElement("span");
     badge.className = "discussed-badge discussed-control";
@@ -708,6 +719,10 @@ function formatUtcDate(ts) {
 }
 
 function renderDiscussed() {
+  if (!DISCUSSED_ENABLED) {
+    showEmptyState("Discussed-paper features are currently disabled.");
+    return;
+  }
   const list = document.getElementById("paper-list");
   list.innerHTML = "";
 
